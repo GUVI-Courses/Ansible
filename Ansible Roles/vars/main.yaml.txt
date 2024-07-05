@@ -1,0 +1,7 @@
+#vars file for mynewrole
+pkgs: 
+ - httpd
+ - firewalld
+rule:
+ - http
+ - https

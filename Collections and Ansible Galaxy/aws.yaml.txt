@@ -1,0 +1,14 @@
+- hosts: localhost
+  tasks:
+  - amazon.aws.ec2_instance:
+      name: "new_instance"
+      image_id: "ami_image_name"
+      vpc_subnet_id: "subnet-09cd954372068aad0"
+      instance_type: "t2.micro"
+      key_name: "ansible"
+      count: 1
+      region: "ap-south-1"
+      state: present
+      access_key: provide_access_key
+      secret_key: provide_access_key
+      

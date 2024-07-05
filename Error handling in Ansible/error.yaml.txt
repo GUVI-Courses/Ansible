@@ -1,0 +1,10 @@
+- hosts: localhost
+  tasks:
+  - command: cal
+  - package: "name=php state=present"
+    register: s
+    failed_when: true
+    ignore_errors: true
+  - debug:
+      var: s
+    when: not s.failed

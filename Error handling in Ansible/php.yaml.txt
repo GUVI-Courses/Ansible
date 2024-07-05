@@ -1,0 +1,5 @@
+- hosts: localhost
+  tasks:
+  - package: "name=php state=present"
+  - command: cal
+    changed_when: false

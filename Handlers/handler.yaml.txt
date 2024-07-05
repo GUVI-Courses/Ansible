@@ -1,0 +1,14 @@
+- name: install httpd software
+  hosts: all
+  tasks:
+   - name: install httpd
+     yum:
+      name: httpd
+      state: latest/absent
+     notify
+      - restart web service
+  handlers:
+   - name: restart web service
+     service:
+       name: httpd
+       state: restarted 

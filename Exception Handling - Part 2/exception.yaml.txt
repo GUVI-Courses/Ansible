@@ -1,0 +1,19 @@
+- hosts: all
+  tasks:
+  - name: InstallingHttpd software and software and start services
+    block: 
+    - package: 
+        name: "httpd"
+        state: present
+    - service:
+        name: "httpd"
+        state: started
+    always:
+    - copy:
+        src: "web.html"
+        dest: "/var/www/html"
+    - debug:
+        msg: "copying the html file in target folder"
+    rescue:
+    - debug:
+        msg: "Error"
